@@ -11,6 +11,14 @@ public class Flowcharts {
     flowchart(20);
     System.out.println("Flowchart 5000 -> ");
     flowchart(5000);
+    System.out.println("FlowchartLoopA ->");
+    flowchartLoopA();
+    System.out.println("FlowchartLoopB ->");
+    flowchartLoopB();
+    System.out.println("OneTenLoopA ->");
+    oneTenLoopA();
+    System.out.println("OneTenLoopB ->");
+    oneTenLoopB();
   }
 
   private static int addMul(int num1, int num2, boolean add) {
@@ -50,6 +58,40 @@ public class Flowcharts {
         }
       } else {
         System.out.println(2);
+      }
+    }
+  }
+
+  private static void flowchartLoopA() {
+    for (int A = 100; A <= 200; A++) {
+      System.out.print("A");
+    }
+    System.out.println("");
+  }
+
+  private static void flowchartLoopB() {
+    for (int A = 100; A < 200; A++) {
+      if (A % 2 == 0) {
+        System.out.print("-");
+      } else {
+        System.out.print("*");
+      }
+    }
+    System.out.println("");
+  }
+
+  private static void oneTenLoopA() {
+    for (int i = 1; i <= 10; i++) {
+      for (int j = 0; j < 10; j++) {
+        System.out.println(i);
+      }
+    }
+  }
+
+  private static void oneTenLoopB() {
+    for (int i = 1; i <= 10; i++) {
+      for (int j = 0; j < i; j++) {
+        System.out.println(i);
       }
     }
   }
