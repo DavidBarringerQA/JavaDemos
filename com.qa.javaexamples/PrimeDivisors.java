@@ -7,6 +7,7 @@ public class PrimeDivisors {
     System.out.println(GCD(15, 30));
     System.out.println(GCD(13, 19));
     System.out.println(GCD(42, 36));
+    System.out.println(LPF(455));
   }
 
   // A naive prime checker
@@ -38,5 +39,15 @@ public class PrimeDivisors {
       }
     }
     return gcd;
+  }
+
+  private static int LPF(int num) {
+    int lpf = 1;
+    for (int i = 2; i < num / 2; i++) {
+      if (num % i == 0 && naivePrime(i)) {
+        lpf = i;
+      }
+    }
+    return lpf;
   }
 }
