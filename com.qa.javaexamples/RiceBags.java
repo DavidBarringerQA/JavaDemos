@@ -7,6 +7,10 @@ public class RiceBags {
     System.out.println(smallBagCount(16, 8, 2));
   }
 
+  /*
+   Remove as many large bags as possible, if there are fewer small bags
+   than remaining kilograms, it's not possible.
+  */
   private static boolean possible(int goal, int small, int large) {
     if ((goal - (goal % 5)) / 5 > large) {
       goal -= large * 5;

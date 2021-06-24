@@ -11,6 +11,8 @@ public class BottlesOfBeer {
               + (i - 1)
               + "bottles of beer on the wall.");
     }
+    // For 1 & 0 bottles of beer, it's simpler to not add checks to change the grammar; just write
+    // them individually
     System.out.println(
         "One bottle of beer on the wall, one bottle of beer.\n"
             + "Take one down and pass it around, no more bottles of beer on the wall.");

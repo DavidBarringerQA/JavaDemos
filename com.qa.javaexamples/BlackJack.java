@@ -9,6 +9,8 @@ public class BlackJack {
   }
 
   private static int winner(int p1, int p2) {
+    // since these checks return a value, else ifs are not necessary
+    // the checks are also exhaustive allowing simpler checks
     if (p1 > 21 && p2 > 21) {
       return 0;
     }

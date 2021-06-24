@@ -17,6 +17,7 @@ public class PrimeDivisors {
     } else if (num % 2 == 0) {
       return false;
     }
+    // Can technically change the escape clause to sqrt(num)
     for (int i = 3; i < num / 2; i = i + 2) {
       if (num % i == 0) {
         return false;
@@ -43,6 +44,7 @@ public class PrimeDivisors {
 
   private static int LPF(int num) {
     int lpf = 1;
+    // Could also change the escape clause to sqrt(num)
     for (int i = 2; i < num / 2; i++) {
       if (num % i == 0 && naivePrime(i)) {
         lpf = i;

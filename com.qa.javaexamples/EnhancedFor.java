@@ -9,6 +9,7 @@ public class EnhancedFor {
 
     int[] intArray = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20};
     for (int i : intArray) {
+      // Syntatic sugar for: i = i*i;
       i *= i;
       System.out.println(i);
     }
@@ -24,6 +25,7 @@ public class EnhancedFor {
   }
 
   private static boolean isEven(int num) {
+    // Don't bother with if/else since the equality test returns a boolean value
     return (num % 2 == 0);
   }
 }

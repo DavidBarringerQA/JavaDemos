@@ -13,7 +13,7 @@ public class Arrays {
       System.out.println(arrayB[i]);
     }
     for (int i = 0; i < arrayB.length; i++) {
-      arrayB[i] *= 10;
+      arrayB[i] *= 10; // same as: arrayB[i] = arrayB[i] * 10
       System.out.println(arrayB[i]);
     }
   }

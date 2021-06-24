@@ -8,6 +8,7 @@ public class ForNumbers {
     System.out.println(printNum(142));
     System.out.println(printNum(3000));
     System.out.println(printNum(7777));
+    System.out.println(printNum(888888));
   }
 
   private static int digitAdd(int num) {
@@ -19,6 +20,11 @@ public class ForNumbers {
     return ones + tens;
   }
 
+  /*
+   Numbers 1-15 don't have a fixed pattern, so they need to be handled as seperate cases,
+   I've extended this to include 16-19, because they're not worth handling seperately
+   Since each case returns, there isn't a need for break statements.
+  */
   private static String smalls(int num) {
     switch (num) {
       case 1:
@@ -64,6 +70,13 @@ public class ForNumbers {
     }
   }
 
+  /*
+   This is a check for each increment. We have a different name for each tens value.
+   Then for the hundreds, we use the result of the smalls method, followed by "hundred"
+   if it's not a round hundred, we then say "and" followed by the rest. That pattern is
+   repeated for the thousands, but without the use of "and". Isn't English great?
+   This solution works for numbers up to 999,999.
+  */
   private static String printNum(int num) {
     if (num < 0) {
       return "number out of scope";
@@ -91,9 +104,9 @@ public class ForNumbers {
       return printNum((num - (num % 100)) / 100)
           + " hundred and "
           + printNum(num - (num - (num % 100)));
-    } else if (num < 10000 && num % 1000 == 0) {
+    } else if (num < 1000000 && num % 1000 == 0) {
       return printNum(num / 1000) + " thousand";
-    } else if (num < 10000) {
+    } else if (num < 1000000) {
       return printNum((num - (num % 1000)) / 1000)
           + " thousand, "
           + printNum(num - (num - (num % 1000)));

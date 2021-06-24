@@ -18,6 +18,12 @@ public class BinTree {
     System.out.println(perfectCheck(t3));
   }
 
+  /*
+   This is a function to check if a binary tree is perfect (i.e. all levels are filled).
+   If there is a left child and no right child, or vice-versa then it fails.
+   If there are no left or right children it passes at this level.
+   If there are both left and right children, it checks that both the children are perfect.
+  */
   private static boolean perfectCheck(TreeNode node) {
     if (node.left() == null && node.right() == null) {
       return true;
@@ -29,6 +35,10 @@ public class BinTree {
   }
 }
 
+/*
+A basic TreeNode class, has methods to make the left and right children and to return
+left and right children. No values can be stored.
+ */
 class TreeNode {
   private TreeNode left;
   private TreeNode right;

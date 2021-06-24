@@ -18,9 +18,17 @@ public class Coins {
     if (cost > paid) {
       return "Not enough money given";
     }
+    // Change the money into an int of pennies to avoid floating point errors.
     return change((int) ((paid - cost) * 100));
   }
 
+  /*
+  This function goes through each denomination of British currency, stating at £20
+  If at least 1 of that denomination can be taken out, then as many as possible are removed, then call the
+  function again with the remaining change.
+  Otherwise check the next highest denomination
+  Repeat until all the change has been made up i.e. money == 0
+  */
   private static String change(int money) {
     if (money == 0) {
       return "";
