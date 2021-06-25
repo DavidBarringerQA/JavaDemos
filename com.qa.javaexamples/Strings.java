@@ -1,13 +1,15 @@
 package com.qa.javaexamples;
 
+import java.util.stream.*;
+
 public class Strings {
   public static void main(String[] args) {
     String s1 = "TODAY IT IS SUNNY";
     String s2 = "YESTERDAY IT WAS RAINING";
     System.out.println(s1 + ", " + s2);
     System.out.println(s1.substring(0, 12) + s2.substring(17));
-    System.out.println(wordCount(s1));
-    System.out.println(newlineWord(s1));
+    System.out.println(lambdaWordCount(s1));
+    // System.out.println(lambdaNewlineWord(s1));
     System.out.println(newlineWordRev(s2));
     System.out.println(manContains(s2, "WA"));
   }
@@ -62,5 +64,14 @@ public class Strings {
       }
     }
     return false;
+  }
+
+  public static int lambdaWordCount(String s) {
+    return s.chars()
+            .mapToObj(c -> (char) c)
+            .filter(c -> c == ' ')
+            .collect(Collectors.counting())
+            .intValue()
+        + 1;
   }
 }

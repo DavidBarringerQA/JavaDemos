@@ -1,23 +1,22 @@
 package com.qa.javaexamples;
 
+import java.util.stream.*;
+
 public class FizzBuzz {
   public static void main(String[] args) {
-    for (int i = 0; i < 50; i++) {
-      System.out.println(fizzBuzz(i));
-    }
+    System.out.println(
+        IntStream.range(0, 50).mapToObj(i -> test(i)).collect(Collectors.joining("\n")));
   }
 
-  public static String fizzBuzz(int num) {
-    // Appending strings removes a check for both %3 and %5
-    String res = "";
-    if (num % 3 == 0) {
-      res = res + "Fizz";
+  private static String test(int num) {
+    if (num % 3 == 0 && num % 5 == 0) {
+      return "FizzBuzz";
+    } else if (num % 3 == 0) {
+      return "Fizz";
+    } else if (num % 5 == 0) {
+      return "Buzz";
+    } else {
+      return "" + num;
     }
-    if (num % 5 == 0) {
-      res = res + "Buzz";
-    } else if (num % 3 != 0) {
-      res = res + num;
-    }
-    return res;
   }
 }

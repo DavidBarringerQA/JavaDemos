@@ -21,46 +21,46 @@ public class ForNumbers {
    I've extended this to include 16-19, because they're not worth handling seperately
    Since each case returns, there isn't a need for break statements.
   */
-  private static String smalls(int num) {
+  private static String smalls(int num, String flag) {
     switch (num) {
       case 1:
-        return "one";
+        return flag + "one";
       case 2:
-        return "two";
+        return flag + "two";
       case 3:
-        return "three";
+        return flag + "three";
       case 4:
-        return "four";
+        return flag + "four";
       case 5:
-        return "five";
+        return flag + "five";
       case 6:
-        return "six";
+        return flag + "six";
       case 7:
-        return "seven";
+        return flag + "seven";
       case 8:
-        return "eight";
+        return flag + "eight";
       case 9:
-        return "nine";
+        return flag + "nine";
       case 10:
-        return "ten";
+        return flag + "ten";
       case 11:
-        return "eleven";
+        return flag + "eleven";
       case 12:
-        return "twelve";
+        return flag + "twelve";
       case 13:
-        return "thirteen";
+        return flag + "thirteen";
       case 14:
-        return "fourteen";
+        return flag + "fourteen";
       case 15:
-        return "fifteen";
+        return flag + "fifteen";
       case 16:
-        return "sixteen";
+        return flag + "sixteen";
       case 17:
-        return "seventeen";
+        return flag + "seventeen";
       case 18:
-        return "eighteen";
+        return flag + "eighteen";
       case 19:
-        return "nineteen";
+        return flag + "nineteen";
       default:
         return "";
     }
@@ -73,27 +73,27 @@ public class ForNumbers {
    repeated for the thousands, but without the use of "and". Isn't English great?
    This solution works for numbers up to 999,999.
   */
-  private static String printNum(int num) {
+  public static String printNum(int num) {
     if (num < 0) {
       return "number out of scope";
     } else if (num < 20) {
-      return smalls(num);
+      return smalls(num, "");
     } else if (num < 30) {
-      return "twenty-" + smalls(num - 20);
+      return "twenty" + smalls(num - 20, "-");
     } else if (num < 40) {
-      return "thirty-" + smalls(num - 30);
+      return "thirty" + smalls(num - 30, "-");
     } else if (num < 50) {
-      return "forty-" + smalls(num - 40);
+      return "forty" + smalls(num - 40, "-");
     } else if (num < 60) {
-      return "fifty-" + smalls(num - 50);
+      return "fifty" + smalls(num - 50, "-");
     } else if (num < 70) {
-      return "sixty-" + smalls(num - 60);
+      return "sixty" + smalls(num - 60, "-");
     } else if (num < 80) {
-      return "seventy-" + smalls(num - 70);
+      return "seventy" + smalls(num - 70, "-");
     } else if (num < 90) {
-      return "eighty-" + smalls(num - 80);
+      return "eighty" + smalls(num - 80, "-");
     } else if (num < 100) {
-      return "ninety-" + smalls(num - 90);
+      return "ninety" + smalls(num - 90, "-");
     } else if (num < 1000 && num % 100 == 0) {
       return printNum(num / 100) + " hundred";
     } else if (num < 1000) {
