@@ -9,15 +9,11 @@ public class ForNumbers {
     System.out.println(printNum(3000));
     System.out.println(printNum(7777));
     System.out.println(printNum(888888));
+    System.out.println(digitAdd(34567));
   }
 
   private static int digitAdd(int num) {
-    if (num < 10 || num >= 100) {
-      return -1;
-    }
-    int ones = num % 10;
-    int tens = (num - ones) / 10;
-    return ones + tens;
+    return String.valueOf(num).chars().map(i -> Character.getNumericValue((char) i)).sum();
   }
 
   /*
